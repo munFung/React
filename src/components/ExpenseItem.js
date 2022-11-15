@@ -1,23 +1,26 @@
 import './ExpenseItem.css';
-import DateObject from "react-date-object";
+//import DateObject from "react-date-object";
+import ExpenseDate from './ExpenseDate';
 
-
-function ExpenseItem() {
-    var $date = new DateObject("2019/09/20");
+function ExpenseItem(props) {
+  /*  var $date = new DateObject("2019/09/20");
     var date = new DateObject($date);
     const expenseTitle = 'Car Insurance';
     const expenseAmount = 294.67;
     const datess =  new Date("2019/09/30");
     const dates =  new Date(2021, 2, 10);
-
+    const month = props.date.toLocaleString('en-US', {month: 'long'});
+    const day = props.date.toLocaleString('en-US', {day: '2-digit'});
+    const year = props.date.getFullYear();
+    */
     return (
         <div className="expense-item">
-        <div>{date.toString()}</div>
-        <div>{dates.toString()}</div>
-        <div>{datess.toString()}</div>
+        <div>{props.date.toString()}</div>
+       
+            <ExpenseDate date={props.date}></ExpenseDate>
             <div className="expense-item__description">
-                <h2>{expenseTitle}</h2>
-                <div className="expense-item__price">${expenseAmount}</div>
+                <h2>{props.title}</h2>
+                <div className="expense-item__price">${props.amount}</div>
             </div>
         </div>
     );
