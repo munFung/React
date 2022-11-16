@@ -14,6 +14,10 @@ function App() {
     { id: 'e3', title: 'Toothbrush', amount: 333, date: new Date(2021, 4, 20) },
   ];
   
+  const addExpenseHandler = expense => {
+    console.log('In App.js');
+    console.log(expense);
+  }
     /* <div className="App">
        <header className="App-header">
          <img src={logo} className="App-logo" alt="logo" />
@@ -43,7 +47,7 @@ function App() {
      
      return (
     <div>
-      <NewExpense></NewExpense>
+      <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
       <p>This is also visible!</p>
       <Expense items={expense}></Expense>
 
