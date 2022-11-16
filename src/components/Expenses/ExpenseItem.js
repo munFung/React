@@ -17,7 +17,7 @@ function ExpenseItem(props) {
     */
    //document.getElementById('root').addEventListener;
     const [title, setTitle] = useState(props.title);
-   console.log('ExpenseItem evaluated by React');
+   //console.log('ExpenseItem evaluated by React');
 
    function clickHandler(){
     setTitle('Updated!');
