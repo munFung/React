@@ -1,6 +1,7 @@
 import './ExpenseItem.css';
 //import DateObject from "react-date-object";
 import ExpenseDate from './ExpenseDate';
+import Card from './Card';
 
 function ExpenseItem(props) {
   /*  var $date = new DateObject("2019/09/20");
@@ -14,15 +15,13 @@ function ExpenseItem(props) {
     const year = props.date.getFullYear();
     */
     return (
-        <div className="expense-item">
-        <div>{props.date.toString()}</div>
-       
+        <Card className="expense-item">
             <ExpenseDate date={props.date}></ExpenseDate>
             <div className="expense-item__description">
                 <h2>{props.title}</h2>
                 <div className="expense-item__price">${props.amount}</div>
             </div>
-        </div>
+        </Card>
     );
 }
 export default ExpenseItem;
