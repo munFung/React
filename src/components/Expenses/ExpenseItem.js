@@ -14,13 +14,25 @@ function ExpenseItem(props) {
     const day = props.date.toLocaleString('en-US', {day: '2-digit'});
     const year = props.date.getFullYear();
     */
-    return (
+   //document.getElementById('root').addEventListener;
+    function clickHandler(){
+    return console.log('Clicked!!!')
+   };
+   /* both are the same
+   const clickHandler = () => {
+    return console.log('Clicked!!!');
+   };
+   */
+   //point without ()
+   return (
         <Card className="expense-item">
             <ExpenseDate date={props.date}></ExpenseDate>
             <div className="expense-item__description">
                 <h2>{props.title}</h2>
                 <div className="expense-item__price">${props.amount}</div>
             </div>
+            <button onClick={clickHandler}>Change Title</button>
+            
         </Card>
     );
 }
