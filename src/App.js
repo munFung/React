@@ -1,4 +1,5 @@
 //import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 //import ExpenseItem from './components/ExpenseItem';
 import Expense from './components/Expense';
@@ -14,7 +15,6 @@ function App() {
     { id: 'e3', title: 'Toothbrush', amount: 783, date: new Date(2021, 4, 20) },
   ];
   
-  return (
     /* <div className="App">
        <header className="App-header">
          <img src={logo} className="App-logo" alt="logo" />
@@ -32,6 +32,16 @@ function App() {
        </header>
      </div>
      */
+    return React.createElement(
+      'div',
+      {},
+      React.createElement('h2', {},"Let's get started!"),
+      React.createElement(Expense, {items:expense})
+
+    );
+
+     /*
+     return (
     <div>
       <h2>Let's get started!</h2>
       <p>This is also visible!</p>
@@ -39,6 +49,7 @@ function App() {
 
     </div>
   );
+  */
 }
 
 export default App;
