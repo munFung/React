@@ -48,7 +48,6 @@ function App() {
      return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
-      <p>This is also visible!</p>
       <Expense items={expense}></Expense>
 
     </div>
