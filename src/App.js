@@ -1,40 +1,28 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Expense from './components/Expenses/Expense';
 import NewExpense from './components/NewExpense/NewExpense';
+ 
 
+const INITIAL_EXPENSES = [
+    { id: 'e1', title: 'Car Insurance', amount: 123, date: new Date(2021, 12, 28) },
+    { id: 'e2', title: 'Toilet Paper', amount: 453, date: new Date(2021, 3, 21) },
+    { id: 'e3', title: 'Toothbrush', amount: 333, date: new Date(2021, 4, 20) },
+  ];
 function App() {
   /*const word = document.createElement('p');
   word.textContent = 'This is also visible';
   document.getElementById('root').append(word);
   */
-  const expense = [
-    { id: 'e1', title: 'Car Insurance', amount: 123, date: new Date(2021, 12, 28) },
-    { id: 'e2', title: 'Toilet Paper', amount: 453, date: new Date(2021, 3, 21) },
-    { id: 'e3', title: 'Toothbrush', amount: 333, date: new Date(2021, 4, 20) },
-  ];
+ 
+  const [expenses, setExpenses] = useState(INITIAL_EXPENSES);
   
   const addExpenseHandler = expense => {
-    console.log('In App.js');
-    console.log(expense);
-  }
-    /* <div className="App">
-       <header className="App-header">
-         <img src={logo} className="App-logo" alt="logo" />
-         <p>
-           Edit <code>src/App.js</code> and save to reload.
-         </p>
-         <a
-           className="App-link"
-           href="https://reactjs.org"
-           target="_blank"
-           rel="noopener noreferrer"
-         >
-           Learn React
-         </a>
-       </header>
-     </div>
-     */
+    setExpenses(prevExpenses => {
+      return [expense, ...prevExpenses];
+    });
+  };
+  
     /* without JSX
     return React.createElement(
       'div',
@@ -48,7 +36,7 @@ function App() {
      return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler}></NewExpense>
-      <Expense items={expense}></Expense>
+      <Expense items={expenses}></Expense>
 
     </div>
   );
